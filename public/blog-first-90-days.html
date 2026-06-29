@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Retention is Decided in the First 90 Days — Solvedstories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F1923; --bg-card: #1C2B3A; --white: #FFFFFF;
+      --warm: #E8E0D0; --gold: #C9A96E; --gold-dim: #8a6f3e;
+      --muted: #8A9BAD; --border: rgba(201,169,110,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--warm); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,25,35,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--warm); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 40px 120px; }
+    .article-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+    .article-author { font-size: 14px; color: var(--muted); }
+    .article-author strong { color: var(--warm); }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body p { margin-bottom: 24px; font-size: 17px; color: var(--warm); font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--white); }
+    .article-body .pull-quote {
+      border-left: 3px solid var(--gold); padding-left: 24px;
+      margin: 36px 0; font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--white); line-height: 1.5; font-style: italic;
+    }
+    .article-body .stats-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 28px 32px; margin: 36px 0; border-radius: 2px;
+    }
+    .article-body .stats-block p { margin-bottom: 8px; font-size: 15px; }
+    .article-body .stats-block p:last-child { margin-bottom: 0; }
+    .article-body .callout {
+      background: var(--bg-card); border-left: 3px solid var(--gold-dim);
+      padding: 20px 24px; margin: 32px 0; border-radius: 0 2px 2px 0;
+    }
+    .article-body .callout p { margin-bottom: 8px; font-size: 15px; }
+    .article-body .callout p:last-child { margin-bottom: 0; }
+    .linkedin-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 48px; padding: 12px 24px;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--warm); text-decoration: none; font-size: 14px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .linkedin-link:hover { border-color: var(--gold); color: var(--gold); }
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 13px; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .article-wrap { padding: 72px 20px 80px; }
+      h1 { font-size: 28px; }
+      .article-body p { font-size: 15px; }
+      .article-body .pull-quote { font-size: 17px; padding-left: 18px; }
+      .article-body .stats-block { padding: 20px 20px; }
+      .article-body .callout { padding: 16px 18px; }
+      .linkedin-link { display: block; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Solvedstories</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <div style="margin-bottom: 48px;">
+    <div class="article-label">Story 04 &nbsp;·&nbsp; Onboarding &amp; Retention</div>
+    <h1>Customer Retention is Decided in the First 90 Days</h1>
+    <div class="article-author">By <strong>Ankit Sourabh Lakra</strong></div>
+  </div>
+
+  <hr class="article-divider" />
+
+  <div class="article-body">
+    <p>We thought we had a product problem. Turns out, we had an onboarding problem.</p>
+
+    <p>We figured this out by doing something most ops teams skip — we talked to the customers who had left.</p>
+
+    <p>The pattern was uncomfortable. They hadn't left because the product failed. They left because they never got started properly.</p>
+
+    <div class="pull-quote">
+      "We felt abandoned after signing." "Our teachers were not comfortable and convinced before the term started." "We didn't see value in the first term — so we assumed we never would."
+    </div>
+
+    <p>We went deeper. Read every support ticket. Every NPS verbatim.</p>
+
+    <p>And that's when it hit us: <strong>"a whisper from a customer is a shout."</strong></p>
+
+    <p>By the time a formal complaint arrives, the emotional exit has already happened. The real signal was weeks earlier — reduced product usage, the unanswered follow-up, the lukewarm score, the principal who was suddenly "too busy."</p>
+
+    <p>We just hadn't been listening.</p>
+
+    <p>So we built three things simultaneously:</p>
+
+    <div class="callout">
+      <p><strong>1. Structure</strong> — a milestone-driven onboarding program. Every step from contract to first real usage mapped, owned, and completed on time, with quality. No handover left to assumption.</p>
+      <p><strong>2. Negative metrics</strong> — heavy focus on red flags instead of wins. Teachers absent during training. Hardware not installed. Low usage. School leaders missing from key meetings. We tracked what wasn't happening, not just what was.</p>
+      <p><strong>3. Listening</strong> — a system where field team observations became first-class inputs. A school leader's changed tone. A training session postponed twice. A teacher with tools she wasn't using.</p>
+    </div>
+
+    <p>Data told us what had happened. Field teams told us what was about to happen.</p>
+
+    <p>When both aligned, we moved fast. Senior intervention. A reset conversation. Sometimes just a genuine visit where someone listened — without defending the product.</p>
+
+    <p>The schools saved from attrition almost always came down to one thing: <strong>someone showed up before it was too late.</strong></p>
+
+    <div class="stats-block">
+      <p>Within two years:</p>
+      <p>📌 Onboarding Attrition dropped from 25%+ to under 10%</p>
+      <p>📌 Every milestone completed — on time, with quality</p>
+    </div>
+
+    <p>The lesson isn't complicated. Talk to churned customers. Actually talk to them. Read the verbatims like letters, not metrics. Your field team knows things your dashboard doesn't. Let them speak.</p>
+
+    <p><strong>Retention isn't won at renewal. It's won — or lost — in the first 90 days.</strong></p>
+
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7449064022471106560/" target="_blank" rel="noopener" class="linkedin-link">
+      Read the original post on LinkedIn →
+    </a>
+  </div>
+</div>
+
+<footer>© 2026 Ankit Sourabh Lakra &nbsp;·&nbsp; Solvedstories.in</footer>
+</body>
+</html>

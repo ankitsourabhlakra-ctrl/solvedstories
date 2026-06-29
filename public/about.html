@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Ankit Sourabh Lakra · Solvedstories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F1923; --bg-card: #1C2B3A; --white: #FFFFFF;
+      --warm: #E8E0D0; --gold: #C9A96E; --gold-dim: #8a6f3e;
+      --muted: #8A9BAD; --border: rgba(201,169,110,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--warm); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,25,35,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); text-decoration: none; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--warm); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    .about-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 40px 120px;
+    }
+
+    .about-header {
+      margin-bottom: 56px;
+    }
+    .about-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .about-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .about-header .subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .about-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0 56px;
+    }
+
+    .about-body p {
+      font-size: 17px;
+      color: var(--warm);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .about-body p strong {
+      font-weight: 600;
+      color: var(--white);
+    }
+    .about-body p.lead {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+    .about-body p.pull {
+      border-left: 3px solid var(--gold);
+      padding-left: 24px;
+      font-style: italic;
+      color: var(--warm);
+      font-size: 17px;
+      margin: 36px 0;
+    }
+    .about-body p.closing {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 16px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .about-body p.closing a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .about-body p.closing a:hover { text-decoration: underline; }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .about-wrap { padding: 72px 20px 80px; }
+      .about-body p { font-size: 15px; }
+      .about-body p.lead { font-size: 19px; }
+      .about-body p.pull { font-size: 15px; padding-left: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Solvedstories</a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="about-wrap">
+
+  <div class="about-header">
+    <div class="about-label">About</div>
+    <h1>Ankit Sourabh Lakra</h1>
+    <div class="subtitle">Operations &amp; Growth Leader &nbsp;·&nbsp; IIM Ahmedabad &nbsp;·&nbsp; Solvedstories.in</div>
+  </div>
+
+  <hr class="about-divider" />
+
+  <div class="about-body">
+
+    <p class="lead">I love a good complex problem.</p>
+
+    <p>Not the kind that needs more data or a smarter framework. The kind where the system itself is broken — and nobody has stopped long enough to see it.</p>
+
+    <p>When I was a young professional, I noticed something that bothered me. Decisions made in boardrooms were never implemented on ground. It wasn't a failure of strategy. It was a failure of systems — or the complete absence of one. Leadership intended one thing. Ground reality was another. Everyone was motivated. Everyone had good intentions. But the path was broken.</p>
+
+    <p>And the worst part — once systems start failing and symptoms appear, everyone gets busy firefighting. Nobody questions the system. People get blamed instead. It took me a few years to realize I wasn't frustrated by people. <strong>I was frustrated by systems that made good people fail.</strong></p>
+
+    <p class="pull">I just got pulled towards fixing that. Like an iron filing to a magnet.</p>
+
+    <p>It didn't matter whether it was offline coaching, online learning or school partnerships. Different businesses. Different customers. Different products. The same invisible problems kept appearing. Things don't work the way they're intended to. Numbers lie. Field teams hide information until it's too late. People spend more energy debating what's true than fixing what's broken.</p>
+
+    <p>I've spent 10+ years developing instincts for exactly this — what's broken, where to look, and what to fix first.</p>
+
+    <p>My best work was never a rigorous chase of numbers. It was being preemptive — mapping the invisible parts of the problem before anyone else saw the visible ones. A team that was firefighting every week, stopped needing to. A program that reached 65,000 teachers and still felt fair to every one of them.</p>
+
+    <p>Now I'm applying the same instinct to a new question — how much further could AI take the same problems I've already solved? I'm less interested in AI as a technology and more as another layer of systems design — one that can eliminate delays, surface invisible patterns, and help people make better decisions earlier. I've started building tools. There will be more.</p>
+
+    <p>I grew up in Jharkhand. I studied engineering at BIT Mesra and management at IIM Ahmedabad. Both taught me different ways of being precise — one with systems, one with people.</p>
+
+    <p class="closing">If you're building something that needs this kind of thinking, I'd like to hear about it. &nbsp;<a href="index.html#contact">Get in touch →</a></p>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Ankit Sourabh Lakra &nbsp;·&nbsp; Solvedstories.in
+</footer>
+
+</body>
+</html>

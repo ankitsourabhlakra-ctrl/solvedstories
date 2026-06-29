@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operations is Trust Architecture — Solvedstories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F1923; --bg-card: #1C2B3A; --white: #FFFFFF;
+      --warm: #E8E0D0; --gold: #C9A96E; --gold-dim: #8a6f3e;
+      --muted: #8A9BAD; --border: rgba(201,169,110,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--warm); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,25,35,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--warm); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 40px 120px; }
+    .article-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+    .article-author { font-size: 14px; color: var(--muted); }
+    .article-author strong { color: var(--warm); }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body p { margin-bottom: 24px; font-size: 17px; color: var(--warm); font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--white); }
+    .article-body .pull-quote {
+      border-left: 3px solid var(--gold); padding-left: 24px;
+      margin: 36px 0; font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--white); line-height: 1.5; font-style: italic;
+    }
+    .article-body .stats-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 28px 32px; margin: 36px 0; border-radius: 2px;
+    }
+    .article-body .stats-block p { margin-bottom: 8px; font-size: 15px; }
+    .article-body .stats-block p:last-child { margin-bottom: 0; }
+    .article-body .callout {
+      background: var(--bg-card); border-left: 3px solid var(--gold-dim);
+      padding: 20px 24px; margin: 32px 0; border-radius: 0 2px 2px 0;
+    }
+    .article-body .callout p { margin-bottom: 8px; font-size: 15px; }
+    .article-body .callout p:last-child { margin-bottom: 0; }
+    .linkedin-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 48px; padding: 12px 24px;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--warm); text-decoration: none; font-size: 14px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .linkedin-link:hover { border-color: var(--gold); color: var(--gold); }
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 13px; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .article-wrap { padding: 72px 20px 80px; }
+      h1 { font-size: 28px; }
+      .article-body p { font-size: 15px; }
+      .article-body .pull-quote { font-size: 17px; padding-left: 18px; }
+      .article-body .stats-block { padding: 20px 20px; }
+      .article-body .callout { padding: 16px 18px; }
+      .linkedin-link { display: block; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Solvedstories</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <div style="margin-bottom: 48px;">
+    <div class="article-label">Story 03 &nbsp;·&nbsp; Operations &amp; Systems</div>
+    <h1>Operations is Trust Architecture</h1>
+    <div class="article-author">By <strong>Ankit Sourabh Lakra</strong></div>
+  </div>
+
+  <hr class="article-divider" />
+
+  <div class="article-body">
+    <p>Most large programs don't fail because of poor planning. They fail because the rules felt unfair.</p>
+
+    <p>I've run customer engagement programs at a scale that most teams don't get to experience.</p>
+
+    <div class="stats-block">
+      <p>BNAT — 10 lakh registrations. 3.6 lakh test takers.</p>
+      <p>BYJU'S AIM — India's largest mock test series. 1.9 lakh registrations, 90K test takers.</p>
+      <p>Shiksha Awards — 5,500 schools. 65,000 teachers. One national stage.</p>
+    </div>
+
+    <p>And across all three, the most dangerous moments had nothing to do with technology failures or logistical breakdowns.</p>
+
+    <p>They came from one thing: <strong>participants who felt the system wasn't fair.</strong></p>
+
+    <p>At BNAT, an accidental wrong question didn't just create a scoring issue — it created a scholarship contention. Students who had prepared for months suddenly questioning whether they'd been robbed of a life-changing opportunity.</p>
+
+    <p>At mock tests, a misalignment with the paper pattern could distort self-assessment entirely — shaking a student's confidence at the worst possible time.</p>
+
+    <p>At Shiksha Awards, schools and teachers escalated — not because the program was poorly designed — but because timeframes, regional differences, board variations, subject weightages, and medium of instruction created a perception of unequal ground.</p>
+
+    <div class="pull-quote">
+      "My school was closed during this period. How could we compete with schools in other parts of the country that were open?"
+    </div>
+
+    <p>Here's the part that stayed with me: most of the time, it wasn't actually a problem.</p>
+
+    <p>We had already accounted for the discrepancies. The rubric was fair. But it wasn't understood — and that made all the difference.</p>
+
+    <p><strong>At scale, perception IS reality.</strong></p>
+
+    <p>You can have the most technically correct rulebook and still lose people's trust — because fairness isn't just about what's right. It's about what feels right.</p>
+
+    <p>Here's how I solved it:</p>
+
+    <div class="callout">
+      <p>→ Pressure-test your rules for perceived inequity, not just logical gaps. Invite someone from the most disadvantaged participant segment to find flaws. They will — and that's the point.</p>
+      <p>→ The value has to be undeniable before the competition begins. Participants who deeply want what you're offering will tolerate friction. Participants who are lukewarm will weaponise ambiguity.</p>
+      <p>→ Resolve edge cases publicly and fast. A quietly resolved grievance helps one person. A transparently resolved one builds trust with thousands watching.</p>
+      <p>→ Communication is not a follow-up step. It's part of the design. If your fairness logic isn't understood by your most sceptical participant, it doesn't matter how airtight your rubric is.</p>
+    </div>
+
+    <p>Running programs at national scale taught me that operations is really trust architecture.</p>
+
+    <p>The logistics are table stakes. The hard part is making 65,000 teachers or 4.5 lakh students feel like the game was worth playing — and that it was played fairly.</p>
+
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7446452707135242240/" target="_blank" rel="noopener" class="linkedin-link">
+      Read the original post on LinkedIn →
+    </a>
+  </div>
+</div>
+
+<footer>© 2026 Ankit Sourabh Lakra &nbsp;·&nbsp; Solvedstories.in</footer>
+</body>
+</html>

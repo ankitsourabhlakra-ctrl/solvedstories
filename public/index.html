@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankit Sourabh Lakra — Solvedstories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0F1923;
+      --bg-card: #1C2B3A;
+      --bg-card-hover: #223244;
+      --white: #FFFFFF;
+      --warm: #E8E0D0;
+      --gold: #C9A96E;
+      --gold-dim: #8a6f3e;
+      --muted: #8A9BAD;
+      --border: rgba(201,169,110,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--warm);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15,25,35,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--warm);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-inner {
+      max-width: 700px;
+    }
+    .hero-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: var(--muted);
+      font-family: 'Playfair Display', serif;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .hero-role {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 24px;
+      letter-spacing: 0.01em;
+    }
+    .hero-tagline {
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--warm);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 580px;
+    }
+    .hero-meta {
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .hero-meta span {
+      margin: 0 6px;
+      color: var(--gold-dim);
+    }
+    .hero-cta {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0F1923;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--warm);
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 48px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 56px;
+      line-height: 1.2;
+    }
+
+    /* CAREER TIMELINE */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1px 1fr;
+      gap: 0 32px;
+      padding: 0 0 48px 0;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-left {
+      text-align: right;
+      padding-top: 4px;
+    }
+    .timeline-company {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .timeline-duration {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .timeline-spine {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--gold-dim);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .timeline-line {
+      width: 1px;
+      flex: 1;
+      background: var(--border);
+      margin-top: 8px;
+    }
+    .timeline-item:last-child .timeline-line { display: none; }
+    .timeline-right { padding-top: 2px; }
+    .timeline-achievements {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .timeline-achievements li {
+      font-size: 14px;
+      color: var(--warm);
+      padding-left: 14px;
+      position: relative;
+    }
+    .timeline-achievements li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-size: 12px;
+    }
+
+    /* EDUCATION */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 0;
+    }
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      border-radius: 2px;
+    }
+    .edu-school {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .edu-degree {
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .edu-detail {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* BLOG */
+    .blog-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .blog-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .blog-card:first-child { border-top: 1px solid var(--border); }
+    .blog-card:hover .blog-title { color: var(--gold); }
+    .blog-num {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding-top: 4px;
+      min-width: 28px;
+      flex-shrink: 0;
+    }
+    .blog-text { flex: 1; }
+    .blog-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .blog-excerpt {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .blog-arrow {
+      color: var(--gold-dim);
+      font-size: 20px;
+      padding-top: 4px;
+      flex-shrink: 0;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .blog-card:hover .blog-arrow { transform: translateX(4px); color: var(--gold); }
+
+    /* AI PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 28px 28px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--gold-dim);
+    }
+    .project-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .project-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .project-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .project-link {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--gold-dim);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    /* WHAT I WORK ON */
+    .work-intro {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--warm);
+      line-height: 1.7;
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .work-item {
+      padding: 28px 32px 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .work-item:nth-child(odd) {
+      padding-right: 48px;
+    }
+    .work-item:nth-child(even) {
+      padding-left: 48px;
+      padding-right: 0;
+      border-left: 1px solid var(--border);
+    }
+    .work-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+    .work-heading {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+    .work-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .work-tools {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--gold-dim);
+      letter-spacing: 0.04em;
+    }
+    .work-closing {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .work-closing a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .work-closing a:hover { text-decoration: underline; }
+
+    /* CONTACT */
+    .contact-inner {
+      max-width: 600px;
+    }
+    .contact-inner p {
+      font-size: 18px;
+      color: var(--warm);
+      margin-bottom: 40px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .contact-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-width: 80px;
+    }
+    .contact-value {
+      font-size: 15px;
+      color: var(--warm);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-value:hover { color: var(--gold); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      /* NAV — hide text links, show brand only on small screens */
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+
+      /* HERO */
+      .hero { padding: 72px 20px 60px; min-height: auto; }
+      .hero-avatar { width: 68px; height: 68px; font-size: 22px; margin-bottom: 24px; }
+      .hero h1 { font-size: 32px; }
+      .hero-role { font-size: 15px; }
+      .hero-tagline { font-size: 17px; }
+      .hero-meta { font-size: 13px; line-height: 1.8; }
+      .hero-cta { flex-direction: column; gap: 12px; }
+      .btn-primary, .btn-ghost { text-align: center; padding: 14px 24px; }
+
+      /* SECTIONS */
+      section { padding: 64px 20px; }
+      .section-heading { font-size: 26px; margin-bottom: 36px; }
+
+      /* TIMELINE */
+      .timeline-item { grid-template-columns: 1fr; gap: 0; }
+      .timeline-left { text-align: left; margin-bottom: 10px; }
+      .timeline-spine { display: none; }
+      .timeline-right { padding-left: 0; }
+
+      /* EDUCATION */
+      .edu-grid { grid-template-columns: 1fr; }
+
+      /* BLOG */
+      .blog-card { gap: 16px; padding: 22px 0; }
+      .blog-arrow { display: none; }
+      .blog-title { font-size: 16px; }
+      .blog-excerpt { font-size: 13px; }
+
+      /* PROJECTS */
+      .projects-grid { grid-template-columns: 1fr; }
+
+      /* WORK ON */
+      .work-grid { grid-template-columns: 1fr; }
+      .work-item { padding: 20px 0 !important; border-left: none !important; }
+      .work-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .work-item:last-child { border-bottom: none; }
+
+      /* CONTACT */
+      .contact-inner p { font-size: 16px; }
+      .contact-row { flex-direction: column; gap: 4px; align-items: flex-start; }
+
+      footer { padding: 24px 20px; }
+    }
+
+    /* Very small screens (iPhone SE etc) */
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 28px; }
+      .hero-tagline { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Solvedstories</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Solvedstories.in</div>
+    <div class="hero-avatar">A</div>
+    <h1>Ankit Sourabh Lakra</h1>
+    <div class="hero-role">Operations &amp; Growth Leader &nbsp;|&nbsp; Customer Experience</div>
+    <p class="hero-tagline">I build systems that scale, retain, and deliver — across EdTech's most complex environments.</p>
+    <div class="hero-meta">
+      10+ years <span>·</span> IIM Ahmedabad <span>·</span> Solving problems for Schools, Teachers, Students
+    </div>
+    <div class="hero-cta">
+      <a href="#blog" class="btn-primary">Read the Stories</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- WHAT I WORK ON -->
+<section id="work">
+  <div class="section-label">What I Work On</div>
+  <h2 class="section-heading">Where I can help</h2>
+  <p class="work-intro">I take on problems at the intersection of operations, growth, and customer experience — usually in fast-scaling environments where the system hasn't caught up with the ambition.</p>
+
+  <div class="work-grid">
+    <div class="work-item">
+      <div class="work-heading">Customer Retention &amp; Onboarding</div>
+      <div class="work-desc">Building the structures that turn a signed contract into a genuinely retained customer. Milestone frameworks, early warning systems, field team playbooks.</div>
+    </div>
+    <div class="work-item">
+      <div class="work-heading">Revenue Operations &amp; Lead Management</div>
+      <div class="work-desc">Designing lead journeys with well-defined stages, marketing automations, and nurture workflows.</div>
+      <div class="work-tools">Leadsquared · HubSpot · Zapier · Calendly</div>
+    </div>
+    <div class="work-item">
+      <div class="work-heading">Process &amp; Cost Optimisation</div>
+      <div class="work-desc">Finding the gaps in existing processes that are quietly costing bandwidth, time, and money. Improving turnaround times, conversion rates, and resource utilisation without adding headcount.</div>
+    </div>
+    <div class="work-item">
+      <div class="work-heading">Program Design at Scale</div>
+      <div class="work-desc">Designing and running large customer-facing programs — rewards, assessments, engagement initiatives — where fairness, trust, and logistics all have to work together.</div>
+    </div>
+    <div class="work-item">
+      <div class="work-heading">AI Workflow Integration</div>
+      <div class="work-desc">Identifying where manual, high-effort work in ops and customer success can be eliminated or accelerated. Building tools rather than just using them.</div>
+      <div class="work-tools">Make.com · Vercel · Claude · Zapier</div>
+    </div>
+    <div class="work-item">
+      <div class="work-heading">Strategy &amp; Growth Operations</div>
+      <div class="work-desc">Translating organisational goals into execution systems across functions. The kind of work that sits between strategy and delivery and often has no clear owner.</div>
+    </div>
+  </div>
+
+  <div class="work-closing">
+    Open to both full-time roles and consulting engagements. &nbsp;<a href="#contact">Get in touch →</a>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- CAREER JOURNEY -->
+<section id="career">
+  <div class="section-label">Career Journey</div>
+  <h2 class="section-heading">Where the problems got solved</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-company">LEAD Group</div>
+        <div class="timeline-duration">3 yrs 9 mo</div>
+      </div>
+      <div class="timeline-spine">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-right">
+        <ul class="timeline-achievements">
+          <li>92%+ Gross Revenue Retention achieved</li>
+          <li>Built India's Largest School Rewards Program</li>
+          <li>School Onboarding Attrition from 25% → 10%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-company">Think &amp; Learn (BYJU'S)</div>
+        <div class="timeline-duration">2 yrs 2 mo</div>
+      </div>
+      <div class="timeline-spine">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-right">
+        <ul class="timeline-achievements">
+          <li>Sales Conversion improved from 2% → 12%</li>
+          <li>Launched India's First Online Scholarship Test (BNAT)</li>
+          <li>Built India's Largest Online Mock Test Series (AIM)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-company">Resonance Eduventures</div>
+        <div class="timeline-duration">2 yrs 11 mo</div>
+      </div>
+      <div class="timeline-spine">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-right">
+        <ul class="timeline-achievements">
+          <li>CEO's Office — Strategy &amp; Projects</li>
+          <li>Lead Funnel Transformation across 46 locations pan-India</li>
+          <li>Student Attrition reduced from 45% → 4.5%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-company">Ericsson India</div>
+        <div class="timeline-duration">2 yrs</div>
+      </div>
+      <div class="timeline-spine">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-right">
+        <ul class="timeline-achievements">
+          <li>System Administration of Operation Support Subsystems</li>
+          <li>Consistent performance in troubleshooting network faults</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div style="margin-top: 72px;">
+    <div class="section-label">Alma Mater</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-school">IIM Ahmedabad</div>
+        <div class="edu-degree">PGDM — General Management · 2015–17</div>
+        <div class="edu-detail">Cultural &amp; Social Affairs Secretary, Student Affairs Council</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-school">BIT Mesra</div>
+        <div class="edu-degree">B.E. — Electronics &amp; Communication · 2007–12</div>
+        <div class="edu-detail">Recipient of Central Sector Scholarship</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-label">Writing</div>
+  <h2 class="section-heading">Stories from the field</h2>
+
+  <div class="blog-grid">
+    <a href="blog-scholarship-test.html" class="blog-card">
+      <div class="blog-num">01</div>
+      <div class="blog-text">
+        <div class="blog-title">Building India's Largest Online Scholarship Test</div>
+        <div class="blog-excerpt">No playbook. No benchmark. Just a problem to solve at national scale. Here's what happened when we shipped anyway.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </a>
+
+    <a href="blog-leading-metrics.html" class="blog-card">
+      <div class="blog-num">02</div>
+      <div class="blog-text">
+        <div class="blog-title">Importance of Leading Metrics &amp; Early Signalling</div>
+        <div class="blog-excerpt">We had all the signals. We just weren't looking at the right ones. One school's quiet exit taught us how retention is really lost.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </a>
+
+    <a href="blog-trust-architecture.html" class="blog-card">
+      <div class="blog-num">03</div>
+      <div class="blog-text">
+        <div class="blog-title">Operations is Trust Architecture</div>
+        <div class="blog-excerpt">65,000 teachers. 5,500 schools. One national stage. The hardest part wasn't logistics — it was making the game feel fair.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </a>
+
+    <a href="blog-first-90-days.html" class="blog-card">
+      <div class="blog-num">04</div>
+      <div class="blog-text">
+        <div class="blog-title">Customer Retention is Decided in the First 90 Days</div>
+        <div class="blog-excerpt">We thought we had a product problem. Turns out, we had an onboarding problem. Here's how we figured it out — and fixed it.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </a>
+
+    <a href="blog-iceberg-problem.html" class="blog-card">
+      <div class="blog-num">05</div>
+      <div class="blog-text">
+        <div class="blog-title">The Iceberg Problem</div>
+        <div class="blog-excerpt">Firefighting is useful. Firefighting as a habit is how companies lose their soul. On proxy metrics, real outcomes, and what gets missed.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- AI PROJECTS -->
+<section id="projects">
+  <div class="section-label">AI Projects</div>
+  <h2 class="section-heading">Tools built from real problems</h2>
+
+  <div class="projects-grid">
+    <a href="https://retention-risk-tool.vercel.app/" target="_blank" rel="noopener" class="project-card">
+      <div class="project-tag">Weighted Scoring Model</div>
+      <div class="project-name">Retention Risk Tool</div>
+      <div class="project-desc">Scores customer accounts across leading indicators — usage, engagement, relationship health — to surface at-risk accounts before renewal conversations begin.</div>
+      <div class="project-link">View Project →</div>
+    </a>
+
+    <a href="https://onboarding-assistant-rho.vercel.app/" target="_blank" rel="noopener" class="project-card">
+      <div class="project-tag">RAG-Style Document Q&amp;A</div>
+      <div class="project-name">Customer Onboarding Assistant</div>
+      <div class="project-desc">An AI assistant that answers onboarding queries from internal SOPs and playbooks — reducing time-to-answer for field teams and cutting escalation load.</div>
+      <div class="project-link">View Project →</div>
+    </a>
+
+    <a href="https://engagement-report-green.vercel.app/" target="_blank" rel="noopener" class="project-card">
+      <div class="project-tag">Structured Document Generation</div>
+      <div class="project-name">Customer Engagement Report</div>
+      <div class="project-desc">Generates structured, customer-facing engagement summaries from multi-source data — automating a report that previously took field managers hours to produce.</div>
+      <div class="project-link">View Project →</div>
+    </a>
+
+    <a href="https://test-generator-nine.vercel.app/" target="_blank" rel="noopener" class="project-card">
+      <div class="project-tag">No-Code Automation</div>
+      <div class="project-name">Online Test Generator</div>
+      <div class="project-desc">Converts any uploaded document into a structured test with questions, options, and answer keys — built for educators who need to create assessments at scale.</div>
+      <div class="project-link">View Project →</div>
+    </a>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-heading">Let's talk</h2>
+  <div class="contact-inner">
+    <p>If you're building something that needs sharp operations thinking — or just want to exchange notes on EdTech, retention, or systems — I'd be glad to hear from you.</p>
+    <div class="contact-links">
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <a href="mailto:p15ankitl@iima.ac.in" class="contact-value">p15ankitl@iima.ac.in</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/ankit-sourabh-lakra-1b8520119" target="_blank" rel="noopener" class="contact-value">ankit-sourabh-lakra</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Ankit Sourabh Lakra &nbsp;·&nbsp; Solvedstories.in
+</footer>
+
+</body>
+</html>

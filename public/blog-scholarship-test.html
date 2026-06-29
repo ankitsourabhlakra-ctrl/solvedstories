@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building India's Largest Online Scholarship Test — Solvedstories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F1923; --bg-card: #1C2B3A; --white: #FFFFFF;
+      --warm: #E8E0D0; --gold: #C9A96E; --gold-dim: #8a6f3e;
+      --muted: #8A9BAD; --border: rgba(201,169,110,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--warm); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,25,35,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--warm); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 40px 120px; }
+    .article-meta { margin-bottom: 48px; }
+    .article-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+    .article-author { font-size: 14px; color: var(--muted); }
+    .article-author strong { color: var(--warm); }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body p { margin-bottom: 24px; font-size: 17px; color: var(--warm); font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--white); }
+    .article-body .pull-quote {
+      border-left: 3px solid var(--gold); padding-left: 24px;
+      margin: 36px 0; font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--white); line-height: 1.5; font-style: italic;
+    }
+    .article-body .stats-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 28px 32px; margin: 36px 0; border-radius: 2px;
+    }
+    .article-body .stats-block p { margin-bottom: 8px; font-size: 15px; }
+    .article-body .stats-block p:last-child { margin-bottom: 0; }
+    .linkedin-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 48px; padding: 12px 24px;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--warm); text-decoration: none; font-size: 14px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .linkedin-link:hover { border-color: var(--gold); color: var(--gold); }
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 13px; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .article-wrap { padding: 72px 20px 80px; }
+      h1 { font-size: 28px; }
+      .article-body p { font-size: 15px; }
+      .article-body .pull-quote { font-size: 17px; padding-left: 18px; }
+      .article-body .stats-block { padding: 20px 20px; }
+      .article-body .callout { padding: 16px 18px; }
+      .linkedin-link { display: block; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Solvedstories</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <div class="article-meta">
+    <div class="article-label">Story 01 &nbsp;·&nbsp; Growth &amp; Scale</div>
+    <h1>Building India's Largest Online Scholarship Test</h1>
+    <div class="article-author">By <strong>Ankit Sourabh Lakra</strong></div>
+  </div>
+
+  <hr class="article-divider" />
+
+  <div class="article-body">
+    <p>I got handed a problem with no playbook. So I built one. Here's what I learned.</p>
+
+    <p>In 2020, my manager walked up to me and said: <strong>"We're doing a national online aptitude test series. It'll be the backbone of sales conversions for our JEE|NEET classrooms. You're running it."</strong></p>
+
+    <p>I asked for the playbook.</p>
+
+    <p>There wasn't one.</p>
+
+    <p>Online tests at this scale hadn't been done in India before. No template, no senior who'd "been there," no benchmark to copy from.</p>
+
+    <p>So we started building — in real time. Every week, decisions without complete information. Some worked. Some didn't. Every failure got documented. Every fix became the next version of the process.</p>
+
+    <div class="stats-block">
+      <p>Six months later, BYJU'S National Aptitude Test (BNAT) had delivered:</p>
+      <p>→ 1,000,000+ unique registrations</p>
+      <p>→ 3.6 lakh students attended across six months</p>
+      <p>→ Sales conversions jumped from 2% (organic) to 8–10% via the scholarship test</p>
+      <p>→ The platform held — and got better with every iteration</p>
+    </div>
+
+    <p>Within a year, every major coaching brand in India had replicated the model.</p>
+
+    <p>We didn't stop there. We ran the same playbook for BYJU'S AIM — India's largest free mock test series for JEE Main, JEE Advanced, and NEET. Others followed again. Imitation is the biggest form of flattery, after all.</p>
+
+    <div class="pull-quote">
+      Done and learned beats perfect and delayed. That's the only playbook I had going in — and it turned out to be the only one I needed.
+    </div>
+
+    <p>The part that still stays with me: we didn't wait until we had it all figured out. We couldn't afford to. We shipped, broke things carefully, fixed them fast, and kept moving.</p>
+
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7444659218617655296/" target="_blank" rel="noopener" class="linkedin-link">
+      Read the original post on LinkedIn →
+    </a>
+  </div>
+</div>
+
+<footer>© 2026 Ankit Sourabh Lakra &nbsp;·&nbsp; Solvedstories.in</footer>
+</body>
+</html>

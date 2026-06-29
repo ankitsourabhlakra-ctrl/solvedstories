@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Iceberg Problem — Solvedstories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F1923; --bg-card: #1C2B3A; --white: #FFFFFF;
+      --warm: #E8E0D0; --gold: #C9A96E; --gold-dim: #8a6f3e;
+      --muted: #8A9BAD; --border: rgba(201,169,110,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--warm); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,25,35,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--warm); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 40px 120px; }
+    .article-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+    .article-author { font-size: 14px; color: var(--muted); }
+    .article-author strong { color: var(--warm); }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body p { margin-bottom: 24px; font-size: 17px; color: var(--warm); font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--white); }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin: 40px 0 16px; }
+    .article-body .pull-quote {
+      border-left: 3px solid var(--gold); padding-left: 24px;
+      margin: 36px 0; font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--white); line-height: 1.5; font-style: italic;
+    }
+    .article-body .stats-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 28px 32px; margin: 36px 0; border-radius: 2px;
+    }
+    .article-body .stats-block p { margin-bottom: 8px; font-size: 15px; }
+    .article-body .stats-block p:last-child { margin-bottom: 0; }
+    .linkedin-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 48px; padding: 12px 24px;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--warm); text-decoration: none; font-size: 14px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .linkedin-link:hover { border-color: var(--gold); color: var(--gold); }
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 13px; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .article-wrap { padding: 72px 20px 80px; }
+      h1 { font-size: 28px; }
+      .article-body p { font-size: 15px; }
+      .article-body .pull-quote { font-size: 17px; padding-left: 18px; }
+      .article-body .stats-block { padding: 20px 20px; }
+      .article-body .callout { padding: 16px 18px; }
+      .linkedin-link { display: block; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Solvedstories</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <div style="margin-bottom: 48px;">
+    <div class="article-label">Story 05 &nbsp;·&nbsp; Strategy &amp; Metrics</div>
+    <h1>The Iceberg Problem</h1>
+    <div class="article-author">By <strong>Ankit Sourabh Lakra</strong></div>
+  </div>
+
+  <hr class="article-divider" />
+
+  <div class="article-body">
+    <p>Firefighting is useful. Firefighting as a habit is how companies lose their soul.</p>
+
+    <p>In fast-moving environments, there's a pattern I've seen play out more times than I'd like to admit. I call it the "Iceberg Problem."</p>
+
+    <p>A fire breaks out. Heroes respond. Leadership notices. Heroes get rewarded. And slowly — almost without anyone deciding it — responding to fires becomes the actual job.</p>
+
+    <p>The metrics that are easiest to move get the most attention. And the outcomes that actually matter keep getting pushed to next week.</p>
+
+    <div class="pull-quote">
+      I remember a Monday morning war room. Dashboard on screen. One metric is red. Training completion at 64%. Need 80% by Friday.
+    </div>
+
+    <p>The team moved. Calls were made. Reminders sent. Follow-ups done. By Friday — 81%. Screenshots shared. Emojis in the group chat. A small moment of collective relief.</p>
+
+    <p>But nobody asked: <strong>did a single teacher teach differently on Monday because of that training?</strong></p>
+
+    <p>The number moved. The outcome didn't. And the war room moved on — already chasing the next red.</p>
+
+    <p>This is how proxy progress becomes the product.</p>
+
+    <h2>It Shows Up Everywhere</h2>
+
+    <div class="stats-block">
+      <p>In EdTech — completions, logins, enrolments. What actually matters: did the student learn something real?</p>
+      <p>In healthcare — consultations, prescriptions, platform usage. What actually matters: did the patient get better?</p>
+      <p>In fintech — accounts opened, transactions, DAUs. What actually matters: is the customer genuinely more financially secure?</p>
+      <p>In skilling — certifications, placements, course completions. What actually matters: would a real employer pay for that skill?</p>
+    </div>
+
+    <p>The gap between the easy metric and the real outcome — that's where the plot gets lost. And customers feel it. They don't renew because you hit your numbers. They renew because they felt better off.</p>
+
+    <h2>The Only Question That Cuts Through</h2>
+
+    <p>In the middle of all the chaos, the best teams I've worked with always found a moment to ask one question:</p>
+
+    <div class="pull-quote">
+      What genuinely better outcome are we creating for someone today? Not what metric. Not what fire. What outcome.
+    </div>
+
+    <p>The Iceberg Problem isn't about laziness or bad intentions. It's what happens when you optimize for what's visible and measurable without asking whether what's visible and measurable is actually what matters.</p>
+
+    <p>The real work — the 90% below the waterline — is always harder to see, harder to reward, and harder to keep the organization pointed at. That's exactly why it separates teams that build lasting things from teams that chase dashboards.</p>
+
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7452326998753906688/" target="_blank" rel="noopener" class="linkedin-link">
+      Read the original post on LinkedIn →
+    </a>
+  </div>
+</div>
+
+<footer>© 2026 Ankit Sourabh Lakra &nbsp;·&nbsp; Solvedstories.in</footer>
+</body>
+</html>

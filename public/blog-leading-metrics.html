@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Importance of Leading Metrics & Early Signalling — Solvedstories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0F1923; --bg-card: #1C2B3A; --white: #FFFFFF;
+      --warm: #E8E0D0; --gold: #C9A96E; --gold-dim: #8a6f3e;
+      --muted: #8A9BAD; --border: rgba(201,169,110,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--warm); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,25,35,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--warm); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 80px 40px 120px; }
+    .article-label { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+    .article-author { font-size: 14px; color: var(--muted); }
+    .article-author strong { color: var(--warm); }
+    .article-divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body p { margin-bottom: 24px; font-size: 17px; color: var(--warm); font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--white); }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin: 40px 0 16px; }
+    .article-body .pull-quote {
+      border-left: 3px solid var(--gold); padding-left: 24px;
+      margin: 36px 0; font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--white); line-height: 1.5; font-style: italic;
+    }
+    .article-body .stats-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 28px 32px; margin: 36px 0; border-radius: 2px;
+    }
+    .article-body .stats-block p { margin-bottom: 8px; font-size: 15px; }
+    .article-body .stats-block p:last-child { margin-bottom: 0; }
+    .linkedin-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 48px; padding: 12px 24px;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--warm); text-decoration: none; font-size: 14px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .linkedin-link:hover { border-color: var(--gold); color: var(--gold); }
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 13px; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .article-wrap { padding: 72px 20px 80px; }
+      h1 { font-size: 28px; }
+      .article-body p { font-size: 15px; }
+      .article-body .pull-quote { font-size: 17px; padding-left: 18px; }
+      .article-body .stats-block { padding: 20px 20px; }
+      .article-body .callout { padding: 16px 18px; }
+      .linkedin-link { display: block; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Solvedstories</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <div style="margin-bottom: 48px;">
+    <div class="article-label">Story 02 &nbsp;·&nbsp; Retention &amp; Data</div>
+    <h1>Importance of Leading Metrics &amp; Early Signalling</h1>
+    <div class="article-author">By <strong>Ankit Sourabh Lakra</strong></div>
+  </div>
+
+  <hr class="article-divider" />
+
+  <div class="article-body">
+    <p>The biggest mistake in customer retention isn't losing customers. It's not seeing it coming. We had all the signals. We just weren't looking at the right ones.</p>
+
+    <p>I want to tell you about a school we lost.</p>
+
+    <p>Payments on track. School leaders warm with our team. When we asked about renewal, they said yes.</p>
+
+    <p>Then renewal day came. And they said no.</p>
+
+    <p>The decision had been made months earlier — quietly, without a single flag in our systems. By the time we were in the retention conversation, we were negotiating something already decided.</p>
+
+    <p>Here's what the data had been telling us:</p>
+
+    <div class="stats-block">
+      <p>→ Implementation was low — teachers weren't using the product or convincing parents it worked.</p>
+      <p>→ Training attendance had dropped — when teachers stop showing up, they've disengaged.</p>
+      <p>→ Field visits had thinned — good rapport masked that meaningful contact had reduced.</p>
+      <p>→ Hardware was below threshold — teachers couldn't run the program, and hadn't reported it.</p>
+    </div>
+
+    <p>None of this was hidden. It was all in our systems. What was missing was the discipline to treat these as leading indicators — not operational footnotes.</p>
+
+    <div class="pull-quote">
+      The school didn't leave on renewal day. They left the day their teachers stopped believing in the program. We just didn't find out until it was too late.
+    </div>
+
+    <h2>Lagging Metrics Are Lying to You</h2>
+
+    <p>Most retention strategies are built backwards. We track renewal rates and NPS — then scramble to explain them after the fact. By the time those numbers move, the customer has already decided.</p>
+
+    <p>We spent three years building a metric that answered one question: not "did the customer renew?" but <strong>"are they actually using what they bought?"</strong></p>
+
+    <p>We called it the Implementation metric. The numbers were stark:</p>
+
+    <div class="stats-block">
+      <p><strong>90%</strong> — Schools with good implementation retained</p>
+      <p><strong>45%</strong> — Schools with zero implementation (a coin flip)</p>
+      <p>Measured across 5,000+ schools. A school not implementing was twice as likely to leave — and unlike renewal intent, implementation was something we could see and act on months in advance.</p>
+    </div>
+
+    <p>The school I described? Zero implementation. We had the signal. We didn't act in time.</p>
+
+    <p>So we built SOPs around it. Teams showed up with data instead of asking schools what they wanted: here is what's happening in your classrooms, here is what needs to change. The field team became advisors. The following year, retention improved.</p>
+
+    <h2>The Only Question That Matters</h2>
+
+    <p>Your customers are sending early warning signals right now. The question is whether you've built the habit of treating usage, adoption, and relationship quality as retention metrics — not just operational ones.</p>
+
+    <p>Retention is won or lost in the months before renewal. By the time you're in the conversation, you're already too late.</p>
+
+    <p><strong>Start looking earlier.</strong></p>
+
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7444659218617655296/" target="_blank" rel="noopener" class="linkedin-link">
+      Read the original post on LinkedIn →
+    </a>
+  </div>
+</div>
+
+<footer>© 2026 Ankit Sourabh Lakra &nbsp;·&nbsp; Solvedstories.in</footer>
+</body>
+</html>
