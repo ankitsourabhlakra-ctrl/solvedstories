@@ -1,0 +1,23 @@
+{
+  "name": "solvedstories",
+  "version": "1.0.0",
+  "description": "Ankit Sourabh Lakra's personal website - Solvedstories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitsourabhlakra-ctrl/solvedstories.git"
+  },
+  "keywords": ["portfolio", "blog", "personal-website"],
+  "author": "Ankit Sourabh Lakra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankitsourabhlakra-ctrl/solvedstories/issues"
+  },
+  "homepage": "https://github.com/ankitsourabhlakra-ctrl/solvedstories#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
