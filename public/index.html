@@ -87,18 +87,20 @@
       margin-bottom: 24px;
     }
     .hero-avatar {
-      width: 88px;
-      height: 88px;
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
-      background: var(--bg-card);
-      border: 2px solid var(--border);
+      border: 2px solid var(--gold-dim);
       margin-bottom: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      color: var(--muted);
-      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
@@ -572,7 +574,9 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-label">Solvedstories.in</div>
-    <div class="hero-avatar">A</div>
+    <div class="hero-avatar">
+      <img src="ankit.png" alt="Ankit Sourabh Lakra" />
+    </div>
     <h1>Ankit Sourabh Lakra</h1>
     <div class="hero-role">Operations &amp; Growth Leader &nbsp;|&nbsp; Customer Experience</div>
     <p class="hero-tagline">I build systems that scale, retain, and deliver — across EdTech's most complex environments.</p>
