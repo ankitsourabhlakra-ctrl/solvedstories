@@ -66,6 +66,57 @@
     }
     .nav-links a:hover { color: var(--gold); }
 
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--warm);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(15,25,35,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 20px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      color: var(--warm);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer a:hover { color: var(--gold); }
+
     /* HERO */
     .hero {
       min-height: 92vh;
@@ -87,8 +138,8 @@
       margin-bottom: 24px;
     }
     .hero-avatar {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 2px solid var(--gold-dim);
       margin-bottom: 32px;
@@ -500,9 +551,10 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      /* NAV — hide text links, show brand only on small screens */
+      /* NAV */
       nav { padding: 0 20px; }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
 
       /* HERO */
       .hero { padding: 72px 20px 60px; min-height: auto; }
@@ -568,7 +620,33 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="nav-drawer" id="drawer">
+  <a href="about.html">About</a>
+  <a href="#career">Career</a>
+  <a href="#blog">Blog</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<script>
+  const btn = document.getElementById('hamburger');
+  const drawer = document.getElementById('drawer');
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+</script>
 
 <!-- HERO -->
 <div class="hero">
